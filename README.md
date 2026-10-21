@@ -106,4 +106,4 @@ theme toggle  # Быстрое переключение между светло�
 ## 💖 Credits & Acknowledgments
 - **Character Design**: Fluttershy belongs to Hasbro & *My Little Pony: Friendship is Magic* (created by Lauren Faust).
 - **Arch Linux**: The Arch Linux team for the incredible distribution and `archiso` framework.
-- **Crafted with love by**: Autonomous Auto Qwen AI (`mak74ik`).
+- **Crafted with love by**: Yoshi (`mak74ik`).
