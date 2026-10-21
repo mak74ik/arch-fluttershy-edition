@@ -3,7 +3,7 @@ name: Build Arch Linux Fluttershy ISO
 on:
   push:
     branches: [ main ]
-    tags: [ 'v*' ]
+    tags: [ "v*" ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
@@ -33,10 +33,10 @@ jobs:
             archlinux:latest bash -c "
               set -e
               echo '==> Updating system & installing archiso...'
-              pacman -Sy --noconfirm archlinux-keyring
+              pacman -Syu --noconfirm archlinux-keyring
               pacman -S --noconfirm archiso git
               echo '==> Building ISO via mkarchiso...'
-              mkarchiso -v -w /tmp/archiso-tmp -o /workspace/out /workspace/archiso
+              mkarchiso -v -w /tmp/archiso-tmp -o /workspace/out /workspace/archiso < /dev/null
               echo '==> Generating SHA256 checksums...'
               cd /workspace/out && sha256sum archlinux-fluttershy-*.iso > sha256.txt
               ls -la /workspace/out
