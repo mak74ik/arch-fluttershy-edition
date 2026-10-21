@@ -1,0 +1,103 @@
+#!/usr/bin/env python3
+"""
+Fluttershy Edition - Interactive Welcome & Action Menu
+Provides immediate Live access or Guided 1-Click Automated Disk Installation.
+"""
+
+import os
+import sys
+import subprocess
+import time
+
+C_RESET = "\033[0m"
+C_BOLD = "\033[1m"
+C_PINK = "\033[38;2;255;182;193m"       # Pastel Pink (#FFB6C1)
+C_ROSE = "\033[38;2;244;172;183m"       # Rose Accent (#F4ACB7)
+C_CREAM = "\033[38;2;255;249;230m"      # Buttercup Cream (#FFF9E6)
+C_CYAN = "\033[38;2;128;206;214m"       # Aqua Teal (#80CED6)
+C_WHITE = "\033[38;2;253;251;247m"      # Soft White (#FDFBF7)
+C_MUTED = "\033[38;2;180;170;185m"      # Lavender Muted (#B4AAB9)
+
+BANNER = f"""{C_PINK}
+          .---.
+       ,-'     `-.               {C_BOLD}{C_PINK}Arch Linux: Fluttershy Edition{C_RESET}
+      /   {C_ROSE}.-^^^-.{C_PINK}  \\            {C_MUTED}──────────────────────────────────────────{C_RESET}
+     /   /   {C_CREAM}____{C_PINK} \\  \\           {C_CYAN}Режим:{C_RESET}     {C_WHITE}Портативный Live / Установочный{C_RESET}
+    |   |   {C_CREAM}/    \\{C_PINK} |  |          {C_CYAN}Статус:{C_RESET}    {C_PINK}Готова к использованию из коробки!{C_RESET}
+    |   |  {C_CREAM}| {C_CYAN}(o){C_CREAM}  {C_CYAN}(o){C_CREAM} |{C_PINK} |          {C_CYAN}Пони:{C_RESET}      {C_CREAM}Флаттершай (Элемент Доброты ✿){C_RESET}
+     \\   \\  {C_CREAM}\\   {C_ROSE}v{C_CREAM}   /{C_PINK} /  /          {C_MUTED}──────────────────────────────────────────{C_RESET}
+      `-. `{C_ROSE}---...---{C_PINK}' .'           {C_WHITE}"...умм, если тебе не трудно, добро пожаловать!"{C_RESET}
+{C_CREAM}         /          \\{C_RESET}
+{C_CREAM}        |   {C_CYAN}ƸӜƷ{C_CREAM}     |{C_RESET}            {C_PINK}●{C_RESET} {C_ROSE}●{C_RESET} {C_CREAM}●{C_RESET} {C_CYAN}●{C_RESET} {C_WHITE}●{C_RESET} {C_MUTED}●{C_RESET}
+{C_CREAM}        (____/\\____){C_RESET}
+"""
+
+def clear():
+    os.system("clear" if os.name != "nt" else "cls")
+
+def show_menu():
+    clear()
+    print(BANNER)
+    print(f"{C_BOLD}{C_PINK}🌸 Выбери действие (нажми цифру и Enter):{C_RESET}\n")
+    print(f"  {C_CYAN}[ 1 ]{C_RESET} {C_BOLD}✨ Запустить портативный рабочий стол (Live Workspace){C_RESET}")
+    print(f"        {C_MUTED}Система уже готова! Открывает Fastfetch, системный монитор и TUI-панель без установки на диск.{C_RESET}\n")
+    print(f"  {C_CYAN}[ 2 ]{C_RESET} {C_BOLD}🚀 Установить Arch Linux Fluttershy Edition на диск (5 ГБ+){C_RESET}")
+    print(f"        {C_MUTED}Простой пошаговый мастер: сам разметит диск, установит систему и настроит загрузчик.{C_RESET}\n")
+    print(f"  {C_CYAN}[ 3 ]{C_RESET} {C_BOLD}🌐 Настроить Wi-Fi / Сеть (nmtui){C_RESET}")
+    print(f"        {C_MUTED}Удобный графический список сетей Wi-Fi для подключения.{C_RESET}\n")
+    print(f"  {C_CYAN}[ 4 ]{C_RESET} {C_BOLD}🎨 Просмотреть палитру и конфиги (Kitty / Alacritty / Ghostty){C_RESET}")
+    print(f"        {C_MUTED}Показывает цветовые токены и файлы конфигурации.{C_RESET}\n")
+    print(f"  {C_CYAN}[ 5 ]{C_RESET} {C_BOLD}💻 Выйти в командную строку (Bash){C_RESET}\n")
+
+    try:
+        choice = input(f"{C_PINK}Твой выбор [1-5]: {C_RESET}").strip()
+    except (EOFError, KeyboardInterrupt):
+        print("\n\n...yay! ✿")
+        return
+
+    if choice == "1":
+        start_live_workspace()
+    elif choice == "2":
+        start_guided_installer()
+    elif choice == "3":
+        subprocess.run(["nmtui"])
+        show_menu()
+    elif choice == "4":
+        subprocess.run(["python3", "/usr/local/bin/fluttershy-main", "--palette"])
+        input(f"\n{C_MUTED}Нажми Enter чтобы вернуться в меню...{C_RESET}")
+        show_menu()
+    elif choice == "5":
+        print(f"\n{C_CREAM}Ты в шелле Arch Linux! Чтобы снова открыть это меню, введи: {C_PINK}menu{C_RESET}\n")
+    else:
+        show_menu()
+
+def start_live_workspace():
+    clear()
+    print(f"{C_PINK}{C_BOLD}🌸 Запуск портативного окружения Fluttershy Live...{C_RESET}\n")
+    time.sleep(1)
+    # Run Fastfetch
+    if os.path.exists("/usr/bin/fastfetch"):
+        subprocess.run(["fastfetch"])
+    else:
+        print(BANNER)
+
+    print(f"\n{C_CREAM}Готово! Ты в портативной системе. Всё работает в оперативной памяти.{C_RESET}")
+    print(f"Полезные команды:")
+    print(f"  {C_CYAN}menu{C_RESET}        - снова открыть графическое меню")
+    print(f"  {C_CYAN}install-arch{C_RESET} - запустить установщик на жесткий диск")
+    print(f"  {C_CYAN}fastfetch{C_RESET}   - показать информацию о системе")
+    print(f"  {C_CYAN}htop{C_RESET}        - посмотреть мониторинг процессов\n")
+
+def start_guided_installer():
+    clear()
+    installer_path = "/usr/local/bin/fluttershy-install"
+    if os.path.exists(installer_path):
+        subprocess.run(["bash", installer_path])
+    else:
+        print(f"{C_PINK}Запуск стандартного интерактивного установщика archinstall...{C_RESET}\n")
+        subprocess.run(["archinstall"])
+    input(f"\n{C_MUTED}Нажми Enter для возврата в меню...{C_RESET}")
+    show_menu()
+
+if __name__ == "__main__":
+    show_menu()

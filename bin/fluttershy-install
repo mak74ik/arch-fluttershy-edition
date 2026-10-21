@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -e
+
+C_PINK="\033[38;2;255;182;193m"
+C_CYAN="\033[38;2;128;206;214m"
+C_CREAM="\033[38;2;255;249;230m"
+C_RESET="\033[0m"
+C_BOLD="\033[1m"
+C_MUTED="\033[38;2;180;170;185m"
+
+clear
+echo -e "${C_PINK}${C_BOLD}"
+echo "    🌸 Мастер автоматической установки Arch Linux Fluttershy Edition 🌸"
+echo "    ─────────────────────────────────────────────────────────────────"
+echo -e "${C_RESET}"
+echo -e "${C_CREAM}Этот мастер поможет установить готовую систему на твой диск или виртуалку (от 5 ГБ).${C_RESET}\n"
+
+echo -e "${C_CYAN}${C_BOLD}Доступные накопители в системе:${C_RESET}"
+lsblk -d -p -n -l -o NAME,SIZE,MODEL | grep -v "loop" | grep -v "airoot" || true
+echo ""
+
+echo -e "${C_PINK}Как ты хочешь установить систему?${C_RESET}"
+echo -e "  ${C_CYAN}[ 1 ]${C_RESET} ${C_BOLD}Запустить интерактивный русский установщик (archinstall)${C_RESET}"
+echo -e "        ${C_MUTED}Самый надежный способ: меню со стрелочками, сам выбираешь диск и пользователя.${C_RESET}"
+echo -e "  ${C_CYAN}[ 2 ]${C_RESET} ${C_BOLD}Автоматическая быстрая установка на диск /dev/vda (для виртуалок)${C_RESET}"
+echo -e "  ${C_CYAN}[ 3 ]${C_RESET} ${C_BOLD}Автоматическая быстрая установка на диск /dev/sda (для ПК)${C_RESET}"
+echo -e "  ${C_CYAN}[ 4 ]${C_RESET} ${C_BOLD}Отмена и возврат в меню${C_RESET}\n"
+
+read -p "Выбери вариант [1-4]: " choice
+
+case "$choice" in
+    1)
+        echo -e "\n${C_PINK}Запуск archinstall... Следуй подсказкам на экране.${C_RESET}\n"
+        archinstall
+        ;;
+    2)
+        echo -e "\n${C_PINK}Выбран диск /dev/vda. Запуск автоматической разметки и установки...${C_RESET}\n"
+        archinstall --disk /dev/vda
+        ;;
+    3)
+        echo -e "\n${C_PINK}Выбран диск /dev/sda. Запуск автоматической разметки и установки...${C_RESET}\n"
+        archinstall --disk /dev/sda
+        ;;
+    *)
+        echo "Отмена."
+        exit 0
+        ;;
+esac
