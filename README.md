@@ -7,133 +7,50 @@
 
 > *"Umm... if it's not too much trouble, welcome to my Arch Linux terminal! ...yay! ✿"*
 
-An ultra-aesthetic, terminal-focused Arch Linux rice & bootable system distribution inspired by **Fluttershy** from *My Little Pony: Friendship is Magic*. Crafted with a calming pastel pink and buttercream palette, custom ASCII art, cute prompt indicators, seamless terminal configs (Kitty, Alacritty, Ghostty), Fastfetch styling, and a complete bootable **Archiso** profile.
+An ultra-aesthetic, terminal-focused Arch Linux distribution inspired by **Fluttershy** from *My Little Pony: Friendship is Magic*. Features authentic Braille ASCII art, instant **Light (Pastel Blush Pink)** and **Dark (Deep Obsidian Plum)** theme switching, custom prompt indicators, fastfetch branding, and a bootable **Archiso** profile for both Live testing and 1-click guided disk installation.
 
 ---
 
-```
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡤⠤⠤⣄⣀⣰⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⠤⠒⠉⠳⢄⠱⡀⠀⠀⢨⠇⠀⡌⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⣠⣞⡁⠀⢀⣀⡀⠀⠡⣱⠴⠊⠹⠀⠀⢹⠀⣷⢤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢀⡜⠁⣀⡀⠀⠄⠀⠈⣁⡾⠁⠀⠀⠀⠀⠀⠸⠀⢹⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⡾⠒⠉⢀⣀⣀⣀⠀⠀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⣎⠀⠀⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⢀⡇⠀⡰⠋⠀⠀⢸⣭⡛⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⡏⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠘⡇⠀⡇⠀⠀⠀⣸⣏⢳⠀⠀⠀⢀⣀⠤⠴⠿⠂⣸⠀⠀⣘⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⹹⡄⠘⣆⠀⠘⠛⢻⣿⡇⠀⠰⠋⠀⠀⠀⠀⣠⠃⠀⢠⣿⢹⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠤⠤⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠙⣄⠈⠳⣄⠀⢈⡿⠃⠀⠀⠀⠀⠀⠀⡴⠃⠀⢠⢋⠇⡼⠀⠀⠀⠀⢀⡴⠊⠁⠀⠀⠀⠀⠀⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠈⠳⢄⡈⠓⢬⡓⠤⣼⣀⣀⣤⡴⡞⠀⠀⠠⢃⠎⢀⡗⢊⣉⣉⣙⣷⣖⣊⡉⠉⠁⠒⠢⡀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠉⠲⣄⠈⠳⢄⠀⠀⠀⡟⠀⠀⡰⠁⡜⠀⢸⠙⢷⡔⠚⣉⡭⣿⡀⠈⠑⣄⠀⠀⠈⢢⡀⠀⠀⢱⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢦⠀⠑⢄⢠⡇⠀⡰⠁⢠⠁⢀⡆⠀⠀⢈⣏⣤⣶⣿⠇⠀⠀⠘⡄⠀⠀⠀⢡⠀⠀⢨⡄⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢀⣠⣄⡀⠀⢳⡄⠈⢿⡇⠀⡅⠀⠸⠀⣼⣀⣀⣠⣾⣵⠟⠉⣹⠀⠀⠀⠀⢻⠀⠀⠀⢸⠀⠀⡼⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⡏⢸⡉⠈⢁⡜⢹⠀⢸⡿⡀⡄⠀⡇⠀⣇⠠⣭⣽⣶⠋⠀⢠⠇⠀⠀⠀⠀⡟⠀⠀⢀⠎⠀⡰⠁⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠳⣄⠉⠓⠉⠀⢀⡧⠊⠀⠹⣷⠀⠸⡀⠘⢆⣿⣿⡟⢇⠀⠘⠙⣆⠀⠀⣸⠁⠀⢀⠎⢀⡔⠁⢰⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠈⠁⠀⠀⠀⠀⡏⠙⢦⣵⣄⠀⢉⣩⡇⠸⡄⠀⠀⠸⡀⣴⠃⠀⡠⢃⡴⠋⠀⣠⠏⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠇⠉⠉⠉⡇⡇⠀⡇⠀⠀⠀⡿⠃⠀⡜⡡⠋⢀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⣸⠀⠀⠀⠀⣿⠁⢠⠃⠀⠀⢰⠇⠀⡼⡞⠀⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠁⠀⢀⠇⠀⠀⠀⢸⠏⠀⡜⠀⠀⠀⠘⣧⡀⡇⢧⠀⠉⠑⠒⠀⢉⣉⣉⣉⡉⠓⢦⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⢀⡞⠀⠀⠀⠀⣸⠤⢴⠁⠀⠀⠀⢀⡏⠉⠓⠒⠷⠶⠒⠚⠉⠁⠀⠀⠀⠀⠙⢦⣹
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠒⠺⠤⠤⠤⠤⠴⠋⠀⠈⠓⠒⠒⠊⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⠴⠛⠉
-```
+## 📸 Скриншоты оформления / Screenshots
+
+### 🌸 Светлая пастельная тема (Light Theme — `theme light`)
+> *Нежный розовый пастельный фон, глубокий читаемый сливовый текст, бирюзовые и золотые акценты (контраст > 13:1 по WCAG).*
+
+![Fluttershy Light Theme Preview](assets/screenshot-light.png)
 
 ---
 
-## 🎨 Color Palette & Design Tokens
+### 🌙 Тёмная обсидиановая тема (Dark Theme — `theme dark`)
+> *Глубокий сливово-черный фон, мягкий пастельно-розовый и кремовый текст, аква-бирюзовые индикаторы.*
 
-| Token | Hex | RGB | Description |
-|---|---|---|---|
-| **Mane Pastel Pink** | `#FFB6C1` | `rgb(255, 182, 193)` | Primary highlight, prompt accent, borders |
-| **Rose Petal** | `#F4ACB7` | `rgb(244, 172, 183)` | Secondary accent, active tab, keybindings |
-| **Buttercup Cream** | `#FFF9E6` | `rgb(255, 249, 230)` | Fluttershy coat, terminal background (light) |
-| **Obsidian Plum** | `#1E1A24` | `rgb(30, 26, 36)` | Deep terminal background (dark mode) |
-| **Aqua Teal** | `#80CED6` | `rgb(128, 206, 214)` | Cutie mark butterflies, eyes, special symbols |
-| **Lavender Mist** | `#D8B4E2` | `rgb(216, 180, 226)` | Selection highlight, search matches |
-| **Velvet Charcoal** | `#2E2A36` | `rgb(46, 42, 54)` | Foreground text (light mode) |
-| **Soft Silk White** | `#FDFBF7` | `rgb(253, 251, 247)` | Foreground text (dark mode) |
+![Fluttershy Dark Theme Preview](assets/screenshot-dark.png)
 
 ---
 
-## 🚀 Instant One-Line Install (On Any Arch Linux)
+## 🎨 Управление темами / Instant Theme Switcher
 
-Apply the complete Fluttershy rice (Kitty, Alacritty, Fastfetch, Bash/Zsh, ASCII MOTD, and cursor) to your current system with a single command:
+В сборку встроен мгновенный переключатель палитры терминала:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/mak74ik/arch-fluttershy-edition/main/install.sh | bash
+theme light   # Включить светлую пастельную тему (чуть розовый фон, винный текст)
+theme dark    # Включить тёмную обсидиановую тему (сливовый фон, нежно-розовый текст)
+theme toggle  # Быстрое переключение между светлой и тёмной
 ```
 
-Or clone and run the interactive TUI configurator:
-
-```bash
-git clone https://github.com/mak74ik/arch-fluttershy-edition.git
-cd arch-fluttershy-edition
-chmod +x run.sh
-./run.sh
-```
+Также тему можно переключить прямо из графического TUI-меню командой `menu` (пункт `[ 4 ]`).
 
 ---
 
-## 💿 Bootable ISO: Download or Build
+## ✨ Ключевые возможности / Features
 
-### 1. Download Pre-Built ISO
-Every commit to `main` triggers a GitHub Actions workflow that builds the full bootable `archlinux-fluttershy-x86_64.iso` using official Archiso tooling.
-- Head to [Releases / Actions](https://github.com/mak74ik/arch-fluttershy-edition/releases) to download the ready `.iso` image.
-- Flash to a USB stick:
-  ```bash
-  sudo dd bs=4M if=archlinux-fluttershy-x86_64.iso of=/dev/sdX status=progress oflag=sync
-  ```
-
-### 2. Build Locally via Docker (Zero Setup Required)
-If you have Docker installed on your machine:
-```bash
-./scripts/build-iso-docker.sh
-```
-This launches an official `archlinux:latest` container with `--privileged`, compiles the ISO, and outputs it to `./out/archlinux-fluttershy-x86_64.iso`.
-
-### 3. Build Locally via Native Archiso
-On any Arch Linux installation:
-```bash
-sudo pacman -S --needed archiso
-sudo mkarchiso -v -w /tmp/archiso-tmp -o out archiso/
-```
-
----
-
-## 📁 Repository Structure
-
-```
-arch-fluttershy-edition/
-├── ascii/                      # Fluttershy ASCII art & colorized ANSI banners
-│   ├── fluttershy.txt          # Pure text ASCII
-│   └── fluttershy_banner.py    # Python ANSI Truecolor generator
-├── bin/
-│   └── fluttershy-motd         # Shell startup MOTD script
-├── configs/                    # Production terminal dotfiles
-│   ├── alacritty/              # Alacritty config (alacritty.toml)
-│   ├── bash/                   # Bash configuration (.bashrc)
-│   ├── fastfetch/              # Fastfetch layout & ASCII logo
-│   ├── ghostty/                # Ghostty modern terminal config
-│   ├── kitty/                  # Kitty GPU terminal config
-│   ├── starship/               # Starship pastel prompt
-│   └── zsh/                    # Zsh prompt & aliases
-├── cursor/                     # Custom cursor theme definition
-│   └── index.theme             # Fluttershy-Pink cursor spec
-├── archiso/                    # Declarative Archiso OS build profile
-│   ├── profiledef.sh           # Archiso profile definition
-│   ├── packages.x86_64         # Minimal & aesthetic package list
-│   ├── pacman.conf             # Mirror & repository config
-│   └── airootfs/               # Live root filesystem overlay
-├── scripts/
-│   ├── build-iso-docker.sh     # One-click Docker ISO builder
-│   └── install-cursor.sh       # Cursor theme applicator
-├── .github/workflows/
-│   └── build-iso.yml           # Automated CI/CD Archiso build & release
-├── main.py                     # Python TUI & CLI management utility
-├── run.sh                      # Zero-dependency launcher
-├── install.sh                  # One-line user installer
-└── LICENSE                     # MIT License
-```
-
----
-
+1. **Два режима использования из коробки**:
+   - **Портативный Live Workspace**: Загружается сразу в оперативную память. Жесткий диск вообще не нужен (0 ГБ). Готов к работе за секунды!
+   - **Автоматический 1-Click установщик на диск (`fluttershy-install` / `install-arch`)**: Сам размечает диск, настраивает UEFI/BIOS, ставит систему и разворачивает всю эстетику Fluttershy.
+2. **Каноничный Braille ASCII Арт Fluttershy**:
+   - Настоящий детальный арт из emojicombos отображается в `fastfetch` и приветственном меню.
+3. **Предустановленный софт**:
+   - `fastfetch`, `htop`, `kitty`, `alacritty`, `zsh`, `python3`, `git`, `curl`, `tmux`, `nano`, `vim`, `nmtui` (графический Wi-Fi).
+4. **Готов к записи на флешку (Rufus / Ventoy / BalenaEtcher)** и запуску в **UTM / VirtualBox / VMware**.
 
 ---
 
@@ -162,6 +79,29 @@ arch-fluttershy-edition/
 > **Хватит ли 5 ГБ хранилища?**
 > - **Для Live-окружения (посмотреть, протестировать TUI и тему)**: виртуальный диск **не нужен вовсе (0 ГБ)** — вся система запускается напрямую в оперативную память из ISO.
 > - **Для полноценной установки на виртуальный диск**: **5 ГБ достаточно** (установленная база с ядром, Kitty, Alacritty, Fastfetch и Python занимает около 3.1–3.4 ГБ, останется ~1.6 ГБ свободного места). Для долгосрочной работы без частой очистки кэша пакетов рекомендуется выделить 8–10 ГБ.
+
+---
+
+## 🚀 Как запустить на Mac в UTM
+
+1. Открой **UTM** и нажми **«+»**.
+2. **ВАЖНО**: Выбери нижний пункт — **«Эмулировать» (Emulate)** *(НЕ «Виртуализация»! На Mac с чипами M1-M4 виртуализация поддерживает только arm64, а эмуляция запускает x86_64 образ для ПК)*.
+3. Выбери **Linux** $	o$ укажи скачанный ISO-файл.
+4. Выдели 2048 МБ памяти и нажми **Сохранить**.
+5. Нажми **▶ (Пуск)**!
+
+---
+
+## 📀 Запись на флешку для ПК через Rufus (Windows)
+
+1. Вставь флешку в ПК (от 4 ГБ).
+2. Скачай и запусти **Rufus**.
+3. В строке «Устройство» выбери свою флешку, в строке «Метод загрузки» нажми «Выбрать» и укажи ISO-образ.
+4. Схема раздела: **GPT** (для современных ПК с UEFI) или **MBR** (для старых ПК с BIOS).
+5. Нажми **СТАРТ**. При запросе выбери режим **«Запись в режиме ISO-образа» (рекомендуется)** или «DD-образ».
+6. Перезагрузи ПК, зайди в Boot Menu (F12, F11, F8 или Esc) и выбери флешку!
+
+---
 
 ## 💖 Credits & Acknowledgments
 - **Character Design**: Fluttershy belongs to Hasbro & *My Little Pony: Friendship is Magic* (created by Lauren Faust).
