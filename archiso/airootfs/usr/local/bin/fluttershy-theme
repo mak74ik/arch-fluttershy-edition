@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# Fluttershy Edition - Instant Console & Terminal Theme Switcher
+# Switch between Light (Soft Pastel Pink) and Dark (Deep Obsidian Plum)
+
+MODE="${1:-toggle}"
+THEME_FILE="/etc/fluttershy/theme.conf"
+mkdir -p /etc/fluttershy 2>/dev/null || mkdir -p "$HOME/.config/fluttershy" 2>/dev/null
+[ -w /etc/fluttershy ] || THEME_FILE="$HOME/.config/fluttershy/theme.conf"
+
+CURRENT="light"
+if [ -f "$THEME_FILE" ]; then
+    CURRENT=$(cat "$THEME_FILE" 2>/dev/null)
+fi
+
+if [ "$MODE" = "toggle" ]; then
+    if [ "$CURRENT" = "light" ]; then
+        MODE="dark"
+    else
+        MODE="light"
+    fi
+fi
+
+apply_light() {
+    # Soft subtle blush pink background with high-contrast readable deep wine plum text
+    printf "\033]P0FDF0F3" # bg: soft pastel blush pink
+    printf "\033]P1D81B60" # red/rose
+    printf "\033]P22E7D32" # green
+    printf "\033]P3D97706" # buttercup gold
+    printf "\033]P45C6BC0" # iris blue
+    printf "\033]P5C2185B" # magenta / deep rose
+    printf "\033]P600838F" # cyan / fluttershy teal
+    printf "\033]P74A1525" # fg: readable deep wine plum
+    printf "\033]P8A88090" # bright black / muted
+    printf "\033]P9E91E63" # bright rose pink
+    printf "\033]PA43A047" # bright green
+    printf "\033]PBF59E0B" # bright gold
+    printf "\033]PC7E57C2" # bright purple
+    printf "\033]PDF06292" # bright pink
+    printf "\033]PE26C6DA" # bright aqua
+    printf "\033]PF2D0A14" # bright fg (deepest plum)
+    echo "light" > "$THEME_FILE" 2>/dev/null
+    clear
+    echo -e "\033[38;2;194;24;91m🌸 [Fluttershy Theme] Включена светлая пастельная тема (Light Theme)\033[0m"
+    echo -e "\033[38;2;74;21;37mДля переключения на темную тему введи: \033[1;35mtheme dark\033[0m"
+}
+
+apply_dark() {
+    # Deep obsidian plum background with soft cream blush text
+    printf "\033]P0191116" # bg: deep plum obsidian
+    printf "\033]P1FF8DA1" # red/rose
+    printf "\033]P281C784" # green
+    printf "\033]P3FFF3B0" # buttercup cream
+    printf "\033]P49FA8DA" # soft blue
+    printf "\033]P5FF6B8B" # magenta/pink
+    printf "\033]P680CED6" # cyan / aqua
+    printf "\033]P7FDF0F4" # fg: soft cream blush
+    printf "\033]P86B5663" # bright black / muted
+    printf "\033]P9FFA8C5" # bright rose
+    printf "\033]PAA5D6A7" # bright green
+    printf "\033]PBFFEAA7" # bright cream
+    printf "\033]PCB39DDB" # bright purple
+    printf "\033]PDFFAEC9" # bright pink
+    printf "\033]PEA0E8F0" # bright cyan
+    printf "\033]PFFFFFF" # bright white
+    echo "dark" > "$THEME_FILE" 2>/dev/null
+    clear
+    echo -e "\033[38;2;255;148;184m🌙 [Fluttershy Theme] Включена тёмная пастельная тема (Dark Theme)\033[0m"
+    echo -e "\033[38;2;253;240;244mДля возврата на светлую тему введи: \033[1;35mtheme light\033[0m"
+}
+
+case "$MODE" in
+    light)
+        apply_light
+        ;;
+    dark)
+        apply_dark
+        ;;
+    *)
+        echo "Использование: theme [light|dark|toggle]"
+        ;;
+esac
