@@ -1,0 +1,82 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/etc/fastfetch/fluttershy.txt",
+    "type": "file",
+    "color": {
+      "1": "magenta"
+    },
+    "padding": {
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": " ✿ "
+  },
+  "modules": [
+    "title",
+    "separator",
+    {
+      "type": "os",
+      "key": "OS",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "host",
+      "key": "Host",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "kernel",
+      "key": "Kernel",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "uptime",
+      "key": "Uptime",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": "Packages",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "shell",
+      "key": "Shell",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "display",
+      "key": "Display",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "key": "Terminal",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "cpu",
+      "key": "CPU",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "memory",
+      "key": "Memory",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "disk",
+      "key": "Disk",
+      "keyColor": "magenta"
+    },
+    "break",
+    "colors"
+  ]
+}
