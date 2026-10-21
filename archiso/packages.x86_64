@@ -132,3 +132,8 @@ kitty
 alacritty
 fastfetch
 iptables-nft
+
+# Full Unicode & Braille Font Support
+noto-fonts
+noto-fonts-emoji
+ttf-dejavu
