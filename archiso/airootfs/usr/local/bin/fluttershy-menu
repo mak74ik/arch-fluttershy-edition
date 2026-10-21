@@ -58,12 +58,14 @@ def show_menu():
     print(f"        {C_MUTED}Простой пошаговый мастер: сам разметит диск, установит систему и настроит загрузчик.{C_RESET}\n")
     print(f"  {C_CYAN}[ 3 ]{C_RESET} {C_BOLD}🌐 Настроить Wi-Fi / Сеть (nmtui){C_RESET}")
     print(f"        {C_MUTED}Удобный графический список сетей Wi-Fi для подключения.{C_RESET}\n")
-    print(f"  {C_CYAN}[ 4 ]{C_RESET} {C_BOLD}🎨 Просмотреть палитру и конфиги (Kitty / Alacritty / Ghostty){C_RESET}")
+    print(f"  {C_CYAN}[ 4 ]{C_RESET} {C_BOLD}🎨 Переключить тему (Светлая пастель / Тёмный обсидиан){C_RESET}")
+    print(f"        {C_MUTED}Мгновенно переключает весь терминал: светлая розовая или тёмная тема.{C_RESET}\n")
+    print(f"  {C_CYAN}[ 5 ]{C_RESET} {C_BOLD}📄 Просмотреть палитру и конфиги (Kitty / Alacritty / Ghostty){C_RESET}")
     print(f"        {C_MUTED}Показывает цветовые токены и файлы конфигурации.{C_RESET}\n")
-    print(f"  {C_CYAN}[ 5 ]{C_RESET} {C_BOLD}💻 Выйти в командную строку (Bash){C_RESET}\n")
+    print(f"  {C_CYAN}[ 6 ]{C_RESET} {C_BOLD}💻 Выйти в командную строку (Zsh){C_RESET}\n")
 
     try:
-        choice = input(f"{C_PINK}Твой выбор [1-5]: {C_RESET}").strip()
+        choice = input(f"{C_PINK}Твой выбор [1-6]: {C_RESET}").strip()
     except (EOFError, KeyboardInterrupt):
         print("\n\n...yay! ✿")
         return
@@ -76,10 +78,14 @@ def show_menu():
         subprocess.run(["nmtui"])
         show_menu()
     elif choice == "4":
+        subprocess.run(["/usr/local/bin/fluttershy-theme", "toggle"])
+        input(f"\n{C_MUTED}Тема переключена! Нажми Enter чтобы вернуться в меню...{C_RESET}")
+        show_menu()
+    elif choice == "5":
         subprocess.run(["python3", "/usr/local/bin/fluttershy-main", "--palette"])
         input(f"\n{C_MUTED}Нажми Enter чтобы вернуться в меню...{C_RESET}")
         show_menu()
-    elif choice == "5":
+    elif choice == "6":
         print(f"\n{C_CREAM}Ты в шелле Arch Linux! Чтобы снова открыть это меню, введи: {C_PINK}menu{C_RESET}\n")
     else:
         show_menu()
