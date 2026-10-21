@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Rust
+target/
+Cargo.lock
+
+# Node / Bun
+node_modules/
+
+# C / Asm
+*.o
+*.so
+*.out
+
+# System
+.DS_Store
+.env
+
+*.pem
+*.enc
+*.key
+.pytest_cache/
+bin/
+obj/

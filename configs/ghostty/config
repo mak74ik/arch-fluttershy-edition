@@ -1,0 +1,25 @@
+# 🌸 Fluttershy Edition Ghostty Configuration
+font-family = "JetBrains Mono Nerd Font"
+font-size = 12
+window-padding-x = 14
+window-padding-y = 14
+background = 1E1A24
+foreground = FDFBF7
+cursor-color = FFB6C1
+cursor-style = bar
+palette = 0=#2E2A36
+palette = 1=#F4ACB7
+palette = 2=#B5E2FA
+palette = 3=#FFF9E6
+palette = 4=#80CED6
+palette = 5=#FFB6C1
+palette = 6=#A0E7E5
+palette = 7=#EADEDA
+palette = 8=#4A4255
+palette = 9=#FFCCD5
+palette = 10=#C5ECEF
+palette = 11=#FEF6D8
+palette = 12=#9BE3EB
+palette = 13=#FFC8D2
+palette = 14=#B8F2F0
+palette = 15=#FFFFFF

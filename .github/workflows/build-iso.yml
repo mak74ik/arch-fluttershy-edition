@@ -1,0 +1,63 @@
+name: Build Arch Linux Fluttershy ISO
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Live ISO Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build ISO inside official Arch Linux Docker container
+        run: |
+          mkdir -p out
+          docker run --rm --privileged \
+            -v "${{ github.workspace }}:/workspace" \
+            -w /workspace \
+            archlinux:latest bash -c "
+              echo '==> Updating system & installing archiso...'
+              pacman -Sy --noconfirm archlinux-keyring
+              pacman -S --noconfirm archiso git
+              echo '==> Building ISO via mkarchiso...'
+              mkarchiso -v -w /tmp/archiso-tmp -o /workspace/out /workspace/archiso
+              echo '==> Generating SHA256 checksums...'
+              cd /workspace/out && sha256sum archlinux-fluttershy-*.iso > sha256.txt
+              ls -la /workspace/out
+          "
+
+      - name: Upload ISO Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: archlinux-fluttershy-x86_64-iso
+          path: out/archlinux-fluttershy-*.iso
+          retention-days: 14
+
+      - name: Upload SHA256 Checksum Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha256-checksum
+          path: out/sha256.txt
+
+      - name: Create Release on Git Tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            out/archlinux-fluttershy-*.iso
+            out/sha256.txt
+          body: |
+            ## 🌸 Arch Linux: Fluttershy Edition Release
+            - Ready-to-boot x86_64 Live ISO image
+            - Built with official Archiso framework
+            - Pastel Pink & Buttercream terminal rice pre-installed
+            - Verify with `sha256sum -c sha256.txt`
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,17 @@
+# 🌸 Fluttershy Starship Prompt
+format = """
+[✿](bold #FFB6C1) [arch](bold #80CED6) $directory$git_branch$character
+"""
+
+[directory]
+style = "bold #FFF9E6"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+style = "bold #FFCCD5"
+symbol = "🌱 "
+
+[character]
+success_symbol = "[➜](bold #FFB6C1)"
+error_symbol = "[✗](bold #F4ACB7)"

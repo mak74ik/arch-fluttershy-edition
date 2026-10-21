@@ -1,0 +1,49 @@
+# 🌸 Arch Linux: Fluttershy Edition - Alacritty Configuration
+
+[window]
+padding = { x = 14, y = 14 }
+opacity = 0.96
+blur = true
+decorations = "Full"
+
+[font]
+size = 12.0
+normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+bold = { family = "JetBrains Mono Nerd Font", style = "Bold" }
+italic = { family = "JetBrains Mono Nerd Font", style = "Italic" }
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+
+[colors.primary]
+background = "#1E1A24"
+foreground = "#FDFBF7"
+
+[colors.cursor]
+text = "#1E1A24"
+cursor = "#FFB6C1"
+
+[colors.selection]
+text = "#1E1A24"
+background = "#FFCCD5"
+
+[colors.normal]
+black   = "#2E2A36"
+red     = "#F4ACB7"
+green   = "#B5E2FA"
+yellow  = "#FFF9E6"
+blue    = "#80CED6"
+magenta = "#FFB6C1"
+cyan    = "#A0E7E5"
+white   = "#EADEDA"
+
+[colors.bright]
+black   = "#4A4255"
+red     = "#FFCCD5"
+green   = "#C5ECEF"
+yellow  = "#FEF6D8"
+blue    = "#9BE3EB"
+magenta = "#FFC8D2"
+cyan    = "#B8F2F0"
+white   = "#FFFFFF"
