@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+python3 -c '
+C_PINK = "\033[38;2;255;182;193m"
+C_ROSE = "\033[38;2;244;172;183m"
+C_CREAM = "\033[38;2;255;249;230m"
+C_CYAN = "\033[38;2;128;206;214m"
+C_WHITE = "\033[38;2;253;251;247m"
+C_MUTED = "\033[38;2;180;170;185m"
+C_RESET = "\033[0m"
+
+print(f"""
+{C_PINK}          .---.{C_RESET}
+{C_PINK}       ,-\x27     `-.{C_RESET}               {C_PINK}Arch Linux Fluttershy Edition{C_RESET}
+{C_PINK}      /   {C_ROSE}.-^^^-.{C_PINK}  \\{C_RESET}            {C_MUTED}────────────────────────────────────{C_RESET}
+{C_PINK}     /   /   {C_CREAM}____{C_PINK} \\  \\{C_RESET}           {C_CYAN}Theme:{C_RESET}     {C_PINK}Fluttershy Pastel Pink & Cream{C_RESET}
+{C_PINK}    |   |   {C_CREAM}/    \\{C_PINK} |  |{C_RESET}          {C_CYAN}Pony:{C_RESET}      {C_CREAM}Fluttershy (Kindness Element){C_RESET}
+{C_PINK}    |   |  {C_CREAM}| {C_CYAN}(o){C_CREAM}  {C_CYAN}(o){C_CREAM} |{C_PINK} |{C_RESET}          {C_CYAN}Quote:{C_RESET}     {C_WHITE}\"...yay! ✿\"{C_RESET}
+{C_PINK}     \\   \\  {C_CREAM}\\   {C_ROSE}v{C_CREAM}   /{C_PINK} /  /{C_RESET}          {C_MUTED}────────────────────────────────────{C_RESET}
+{C_CREAM}        |   {C_CYAN}ƸӜƷ{C_CREAM}     |{C_RESET}            {C_PINK}●{C_RESET} {C_ROSE}●{C_RESET} {C_CREAM}●{C_RESET} {C_CYAN}●{C_RESET} {C_WHITE}●{C_RESET} {C_MUTED}●{C_RESET}
+{C_CREAM}        (____/\\____){C_RESET}
+""")
+'

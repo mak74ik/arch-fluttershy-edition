@@ -1,27 +1,30 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.class
 
-# Rust
+# System & Rust
 target/
 Cargo.lock
-
-# Node / Bun
 node_modules/
-
-# C / Asm
 *.o
 *.so
 *.out
-
-# System
 .DS_Store
 .env
-
 *.pem
 *.enc
 *.key
 .pytest_cache/
-bin/
 obj/
+
+# Do NOT ignore archiso scripts
+!archiso/airootfs/usr/local/bin/**
+!bin/**
+
+# Archiso outputs
+out/
+/tmp/archiso-tmp/
+*.iso
+*.iso.sig
+*.iso.sha256
